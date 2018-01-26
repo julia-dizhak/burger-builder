@@ -88,6 +88,22 @@
     border-radius: 15px;
 }
 
+.Tomato {
+    width: 90%;
+    height: 2.5%;
+    margin: 1% auto 0;
+}
+.Tomato1,
+.Tomato2 {
+    width: 45%;
+    height: 100%;
+    margin: auto 2%;
+    background: linear-gradient(#f44336, #f44336d6);
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+
 .Cheese {
     width: 90%;
     height: 4.5%;
@@ -98,7 +114,7 @@
 
 .Salad {
     width: 85%;
-    height: 7%;
+    height: 6%;
     margin: 2% auto;
     background: linear-gradient(#228c1d, #91ce50);
     border-radius: 20px;
