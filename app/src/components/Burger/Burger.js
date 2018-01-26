@@ -4,15 +4,25 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 import classes from './Burger.css';
 
 const burger = (props) => {
-    const transformedIngredients = Object.keys(props.ingredients)
+
+    let transformedIngredients = Object.keys(props.ingredients)
+        // the map method creates a new array with the result of calling a provided function on every element in the calling array
         .map(igKey => {
             // transform into array
             return [...Array(props.ingredients[igKey])].map((_, i) => {
                 return <BurgerIngredient key={igKey + i} type={igKey} />
             });
+        })
+        // reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value
+        .reduce((arr, el) => {
+            // concat() method is used to merge two or more arrays (returns a new array)
+            return arr.concat(el)
+        }, []);
+    console.log(transformedIngredients);
 
-            }
-        );
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Please start adding ingredients</p>
+    }
 
     return (
         <div className={classes.Burger}>
