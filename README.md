@@ -1,2 +1,2 @@
-# burger-builder
-react burger builder app
+# Burger builder by React
+React burger builder app
