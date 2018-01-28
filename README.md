@@ -1,4 +1,4 @@
-# Burger builder build by React library
+# Burger builder by React library
 React burger builder app
 
 ## Setting up the project
@@ -7,16 +7,20 @@ React burger builder app
 
 ```yarn create-react-app app-name```
 
-```yarn start```
+```yarn start
+```
 starts the development server.
 
-```yarn build```
+```yarn build
+```
 bundles the app into static files for production.
 
-```yarn test```
+```yarn test
+```
 starts the test runner.
 
-```yarn eject```
+```yarn eject
+```
 removes this tool and copies build dependencies, configuration files
 and scripts into the app directory. If you do this, you can’t go back!
 
@@ -25,5 +29,4 @@ I suggest that you begin by typing:
 ```
 cd app
 yarn start
-
 ```
