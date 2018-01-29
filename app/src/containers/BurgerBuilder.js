@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from "react";
 
-import Aux from '../hoc/Aux';
-import Burger from '../components/Burger/Burger';
-import BuildControls from '../components/Burger/BuildControls';
+import Aux from "../hoc/Aux";
+import Burger from "../components/Burger/Burger";
+import BuildControls from "../components/Burger/BuildControls";
 
 
 const INGREDIENT_PRICES = {
@@ -26,29 +26,45 @@ class BurgerBuilder extends Component {
     };
 
     addIngredientHandler = (type) => {
-      const oldCount = this.state.ingredients[type],
-          updatedCount = oldCount + 1,
-          updatedIngredients = {
-              ...this.state.ingredients // state should be updated in immutable way
-          };
+        const oldCount = this.state.ingredients[type],
+            updatedCount = oldCount + 1,
+            updatedIngredients = {
+                ...this.state.ingredients // state should be updated in immutable way
+            };
 
-      updatedIngredients[type] = updatedCount;
+        updatedIngredients[type] = updatedCount;
 
-      const priceAddition = INGREDIENT_PRICES[type], // added less/more ingredients once unit at time so don't need multiply
-          oldPrice = this.state.totalPrice,
-          newPrice = oldPrice + priceAddition;
+        const priceAddition = INGREDIENT_PRICES[type], // added less/more ingredients once unit at time so don't need multiply
+            oldPrice = this.state.totalPrice,
+            newPrice = oldPrice + priceAddition;
 
-      this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
+        this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
     };
 
-    //removeInredientHandler =
+    // deduction an ingredient
+    removeIngredientHandler = (type) => {
+        const oldCount = this.state.ingredients[type],
+            updatedCount = oldCount - 1,
+            updatedIngredients = {
+                ...this.state.ingredients
+            };
 
-    render () {
+        updatedIngredients[type] = updatedCount;
+
+        const priceDeduction = INGREDIENT_PRICES[type],
+            oldPrice = this.state.totalPrice,
+            newPrice = oldPrice - priceDeduction;
+
+        this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
+    };
+
+    render() {
         return (
             <Aux>
-                <Burger ingredients={this.state.ingredients} />
+                <Burger ingredients={this.state.ingredients}/>
                 <BuildControls
-                     ingredientAdd={this.addIngredientHandler}
+                    ingredientAdd={this.addIngredientHandler}
+                    ingredientRemove={this.removeIngredientHandler}
                 />
             </Aux>
         );
