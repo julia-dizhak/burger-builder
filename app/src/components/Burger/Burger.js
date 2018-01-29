@@ -19,13 +19,12 @@ const burger = (props) => {
         // reduce() method applies a function against an accumulator and each element in
         // the array (from left to right) to reduce it to a single value
 
-        // case with zero ingredients
-        // flattened and array
+        // after .map() we will get array of arrays and by .reduce() - list of arrays
+        // case with zero ingredients (flattened and array)
         .reduce((arr, el) => {
             // concat() method is used to merge two or more arrays (returns a new array)
             return arr.concat(el)
         }, []);
-
     //console.log(Object.keys(props.ingredients));
 
     if (transformedIngredients.length === 0) {
@@ -34,7 +33,7 @@ const burger = (props) => {
 
     return (
         <div className={classes.Burger}>
-            {/*static*/}
+            {/*static case*/}
             {/*<BurgerIngredient type="bread-top" />*/}
             {/*<BurgerIngredient type="cheese" />*/}
             {/*<BurgerIngredient type="tomato" />*/}
@@ -42,7 +41,7 @@ const burger = (props) => {
             {/*<BurgerIngredient type="salad" />*/}
             {/*<BurgerIngredient type="bread-bottom" />*/}
 
-            {/*dynamic*/}
+            {/*dynamic case*/}
             <BurgerIngredient type="bread-top" />
             {transformedIngredients}
             <BurgerIngredient type="bread-bottom" />
