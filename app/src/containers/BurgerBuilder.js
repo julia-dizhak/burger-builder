@@ -20,7 +20,7 @@ class BurgerBuilder extends Component {
     state = {
         ingredients: {
             salad: 1,
-            bacon: 0,
+            bacon: 1,
             cheese: 1,
             tomato: 0,
             meat: 0
@@ -29,7 +29,7 @@ class BurgerBuilder extends Component {
         purchasable: false,
         purchasing: false
     };
-    
+
     updatePurchaseState(ingredients) {
         // total amount of ingredients
         const sum = Object.keys(ingredients).map(
@@ -40,6 +40,7 @@ class BurgerBuilder extends Component {
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
+        console.log(sum);
         this.setState({purchasable: sum > 0});
     };
 
