@@ -9,7 +9,7 @@ const orderSummary = (props) => {
             return (
                 // ? why it should be unique key here
                 <li key={igKey}>
-                    <span style={ {textTransform: 'capitalize'} }>{igKey}</span>:
+                    <span style={ {textTransform: 'capitalize'} }>{igKey}</span>:&nbsp;
                     {props.ingredients[igKey]}
                 </li>
             )
