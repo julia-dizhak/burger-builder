@@ -3,7 +3,13 @@ import React from 'react';
 import Aux from '../../../hoc/Aux';
 import Button from '../../UI/Button';
 
+
 const orderSummary = (props) => {
+    // will be accessible if turn to class component
+    // componentWillUpdate() {
+    //     console.log('[OrderSummary] WillUpdate')
+    // }
+
     // transform ingredients objects in a list item: <li>Salad: 1</li>
     const ingredientSummary = Object.keys(props.ingredients)
         .map(igKey => {

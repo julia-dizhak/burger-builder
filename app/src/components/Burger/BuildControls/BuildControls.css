@@ -23,6 +23,11 @@
     width: 20%;
     margin: 15px auto;
 }
+@media (max-width: 500px) {
+    .OrderButton {
+        width: 80%;
+    }
+}
 
 .OrderButton:hover,
 .OrderButton:active {
