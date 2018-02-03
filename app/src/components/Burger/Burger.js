@@ -3,7 +3,7 @@ import React from 'react';
 //import {range} from 'lodash';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 import classes from './Burger.css';
-import {shuffleArray} from '../../utils/arrays';
+//import {shuffleArray} from '../../utils/arrays';
 
 const burger = (props) => {
     // convert object into an array of Burger ingredients
