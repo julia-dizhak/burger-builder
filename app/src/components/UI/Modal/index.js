@@ -11,7 +11,7 @@ class Modal extends Component {
         //console.log(this.props.show, ' Now');
         //console.log(nextProps.show, ' New');
 
-        return nextProps.show !== this.props.show;
+        return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
     };
 
     componentWillUpdate() {
