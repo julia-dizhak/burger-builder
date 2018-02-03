@@ -3,6 +3,7 @@ import React from 'react';
 //import {range} from 'lodash';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 import classes from './Burger.css';
+import {shuffleArray} from '../../utils/arrays';
 
 const burger = (props) => {
     // convert object into an array of Burger ingredients
@@ -30,6 +31,10 @@ const burger = (props) => {
     if (transformedIngredients.length === 0) {
         transformedIngredients = <p>Please start adding ingredients</p>
     }
+
+    // changes existing array by applying random sorting
+    //shuffleArray(transformedIngredients);
+    // console.table(transformedIngredients)
 
     return (
         <div className={classes.Burger}>
