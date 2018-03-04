@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Burger from '../../../components/Burger/index.js';
 import Button from '../../../components/UI/Button';
 
@@ -15,10 +16,10 @@ export default function CheckoutSummary(props) {
 
             <Button 
                 btnType="Danger"
-                clicked="">cancel</Button>  
+                clicked={props.checkoutCancelled}>cancel</Button>  
             <Button 
                 btnType="Success"
-                clicked="">continue</Button>  
+                clicked={props.checkoutContinued}>continue</Button>  
         </div>
     )
 }
