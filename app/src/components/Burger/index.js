@@ -1,11 +1,14 @@
 import React from 'react';
-
 //import {range} from 'lodash';
+import { withRouter } from 'react-router-dom'
+
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 import classes from './Burger.css';
 //import {shuffleArray} from '../../utils/arrays';
 
 const burger = (props) => {
+    //console.log(props);
+    
     // convert object into an array of Burger ingredients
     let transformedIngredients = Object.keys(props.ingredients)
         // the map method creates a new array with the result of calling a provided function
@@ -83,4 +86,4 @@ const burger = (props) => {
 //     )
 // };
 
-export default burger;
+export default withRouter(burger);
