@@ -5,7 +5,7 @@ React burger builder app
 
 ```yarn add create-react-app```
 
-```yarn create-react-app app-name```
+```yarn create-react-app 'app-name'```
 
 ```yarn start``` - starts the development server.
 
