@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import Aux from '../hoc/Aux/';
-import Burger from '../components/Burger/Burger';
+import Aux from '../hoc/Aux';
+import Burger from '../components/Burger';
 import BuildControls from '../components/Burger/BuildControls';
 
-import Modal from '../components/UI/Modal/';
-import OrderSummary from '../components/Burger/OrderSummary/';
-import Spinner from '../components/UI/Spinner/';
+import Modal from '../components/UI/Modal';
+import OrderSummary from '../components/Burger/OrderSummary';
+import Spinner from '../components/UI/Spinner';
 
 import instance from '../axios-orders';
 import axios from '../axios-orders';
