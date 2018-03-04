@@ -1,4 +1,4 @@
-.Button {
+.button {
     background-color: transparent;
     border: none;
     color: white;
@@ -10,15 +10,15 @@
     font-weight: bold;
 }
 
-.Button:first-of-type {
+.button:first-of-type {
     margin-left: 0;
     padding-left: 0;
 }
 
-.Success {
+.success {
     color: #5C9210;
 }
 
-.Danger {
+.danger {
     color: #944317;
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Aux from '../../../hoc/Aux/';
-import Button from '../../UI/Button';
-
+import Button from './../../../shared/ui/Button';
 
 const orderSummary = (props) => {
     // will be accessible if turn to class component
@@ -33,11 +32,11 @@ const orderSummary = (props) => {
            <p><strong>Total price: {props.price.toFixed(2)}</strong></p>
 
            <Button
-               btnType="Danger"
+               btnType="danger"
                clicked={props.purchaseCancelled}
                className>Cancel</Button>
            <Button
-               btnType="Success"
+               btnType="success"
                clicked={props.purchaseContinued}
                className>Continue</Button>
        </Aux>
