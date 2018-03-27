@@ -8,9 +8,7 @@ import Modal from '../components/UI/Modal';
 import OrderSummary from '../components/Burger/OrderSummary';
 import Spinner from '../components/UI/Spinner';
 
-import instance from '../axios-orders';
-import axios from '../axios-orders';
-
+import axios from './../utils/axios-orders';
 import withErrorHandler from '../hoc/withErrorHandler';
 
 
@@ -39,6 +37,7 @@ class BurgerBuilder extends Component {
         error: false
     };
 
+    // called immediately after the node is inserted into the DOM
     componentDidMount() {
         console.log(this.props);
         axios.get('https://react-burger-builder-dizhak.firebaseio.com/ingredients.json')
@@ -114,38 +113,12 @@ class BurgerBuilder extends Component {
      };
 
      purchaseContinueHandler = () => {
-        // stored on firebase immediatelly
-        //  this.setState({loading: true});
-        //  const order = {
-        //      ingredients: this.state.ingredients,
-        //      customer: {
-        //          name: 'Julia Dizhak',
-        //          address: {
-        //              street: 'Hungry 1',
-        //              zipCode: '1000',
-        //              country: 'Ukraine'
-
-        //          },
-        //          email: 'yulia.scherbina@gmail.com',
-        //          deliveryMethod: 'fastest'
-
-        //      }
-        //  };
-
-        // instance.post('/orders.json', order)
-        //     .then(response => {
-        //          this.setState({loading: false, purchasing: false})
-        //     })
-        //     .catch(error => {
-        //          this.setState({loading: false, purchasing: false})
-        //     });
-        
-        // switch page on push
+       // switch page on push
         const queryParams = [];
         for (let i in this.state.ingredients) {
             queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
-        console.log(queryParams);
+        queryParams.push('price=' + this.state.totalPrice);
         const queryString = queryParams.join('&');
         this.props.history.push({
             pathname: '/checkout',
