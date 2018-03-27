@@ -3,7 +3,7 @@ import React from 'react';
 import Burger from '../../../components/Burger/index.js';
 import Button from '../../../shared/ui/Button';
 
-import classes from '../checkout-summary/checkout-summary.css';
+import classes from './checkout-summary.css';
 
 export default function CheckoutSummary(props) {
     return (
