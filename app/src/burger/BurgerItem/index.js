@@ -6,9 +6,7 @@ import BurgerIngredient from './../Ingredient/';
 import classes from './Burger.css';
 //import {shuffleArray} from '../../utils/arrays';
 
-const burger = (props) => {
-    //console.log(props);
-    
+function Burger(props) {   
     // convert object into an array of Burger ingredients
     let transformedIngredients = Object.keys(props.ingredients)
         // the map method creates a new array with the result of calling a provided function
@@ -29,27 +27,13 @@ const burger = (props) => {
             // concat() method is used to merge two or more arrays (returns a new array)
             return arr.concat(el)
         }, []);
-    //console.log(Object.keys(props.ingredients));
 
     if (transformedIngredients.length === 0) {
         transformedIngredients = <p>Please start adding ingredients</p>
     }
 
-    // changes existing array by applying random sorting
-    //shuffleArray(transformedIngredients);
-    // console.table(transformedIngredients)
-
     return (
         <div className={classes.Burger}>
-            {/*static case*/}
-            {/*<BurgerIngredient type="bread-top" />*/}
-            {/*<BurgerIngredient type="cheese" />*/}
-            {/*<BurgerIngredient type="tomato" />*/}
-            {/*<BurgerIngredient type="meat" />*/}
-            {/*<BurgerIngredient type="salad" />*/}
-            {/*<BurgerIngredient type="bread-bottom" />*/}
-
-            {/*dynamic case*/}
             <BurgerIngredient type="bread-top" />
             {transformedIngredients}
             <BurgerIngredient type="bread-bottom" />
@@ -86,4 +70,4 @@ const burger = (props) => {
 //     )
 // };
 
-export default withRouter(burger);
+export default withRouter(Burger);

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
 import classes from './modal.css';
-import Aux from './../../hoc/AuxHOC/';
+import AuxHOC from './../../hoc/AuxHOC/';
 import Backdrop from './../Backdrop/';
 
 
-class Modal extends Component {
+export default class Modal extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         //console.log(this.props.show, ' Now');
         //console.log(nextProps.show, ' New');
@@ -19,7 +19,7 @@ class Modal extends Component {
 
     render () {
         return (
-            <Aux>
+            <AuxHOC>
                 <Backdrop
                     show={this.props.show}
                     clicked={this.props.modalClosed} />
@@ -30,9 +30,7 @@ class Modal extends Component {
                         opacity: this.props.show ? 1 : 0}}>
                     {this.props.children}
                 </div>
-            </Aux>
+            </AuxHOC>
         )
     }
 }
-
-export default Modal;

@@ -2,11 +2,11 @@ import React from 'react';
 
 import classes from './sideDrawer.css';
 import Backdrop from './../../widgets/Backdrop/';
-import Aux from './../../hoc/AuxHOC/';
+import AuxHOC from './../../hoc/AuxHOC/';
 import Logo from './../../widgets/Logo/';
 import NavigationItems from './../NavigationItems/';
 
-const sideDrawer = (props) => {
+export default function SideDrawer(props) {
     let attachedClasses = [classes.SideDrawer, classes.Close];
 
     if (props.open) {
@@ -15,7 +15,7 @@ const sideDrawer = (props) => {
 
     // side draw menu on mobile device
     return (
-        <Aux>
+        <AuxHOC>
             <Backdrop
                 show={props.open}
                 clicked={props.closed} />
@@ -27,9 +27,7 @@ const sideDrawer = (props) => {
                     <NavigationItems />
                 </nav>
             </div>
-        </Aux>
+        </AuxHOC>
 
-    )
-};
-
-export default sideDrawer;
+    );
+}

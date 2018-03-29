@@ -14,5 +14,5 @@ export default function Toolbar(props) {
                 <NavigationItems />
             </nav>
         </header>
-    )
+    );
 }

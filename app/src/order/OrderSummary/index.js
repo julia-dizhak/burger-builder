@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Aux from './../../hoc/AuxHOC/';
+import AuxHOC from './../../hoc/AuxHOC/';
 import Button from './../../widgets/Button/';
 
 const orderSummary = (props) => {
@@ -22,7 +22,7 @@ const orderSummary = (props) => {
         });
 
     return (
-       <Aux>
+       <AuxHOC>
            <h3>Your order</h3>
            <p>A delicious burger with the following ingredients:</p>
            <ul>
@@ -39,7 +39,7 @@ const orderSummary = (props) => {
                btnType="success"
                clicked={props.purchaseContinued}
                className>Continue</Button>
-       </Aux>
+       </AuxHOC>
    )
 };
 

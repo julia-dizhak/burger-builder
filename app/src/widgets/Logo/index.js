@@ -9,5 +9,4 @@ export default function Logo(props) {
             <img src={burgerLogo} alt="Burger" />
         </div>
     )
-    
 }

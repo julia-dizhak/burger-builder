@@ -5,7 +5,7 @@ import Layout from './hoc/Layout/';
 import BurgerBuilder from './burger/Builder';
 import Checkout from './order/Checkout/';
 
-class App extends Component {
+export default class App extends Component {
     render() {
         return (
             <div>
@@ -20,5 +20,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;

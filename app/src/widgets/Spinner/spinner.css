@@ -1,16 +1,14 @@
 .Loader {
-  color: #40a4c8;
-  font-size: 90px;
+  color: hsl(196, 55%, 52%);
+  font-size: 45px;
   text-indent: -9999em;
   overflow: hidden;
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  margin: 72px auto;
+  margin: 45px auto;
   position: relative;
   transform: translateZ(0);
-
-  -webkit-animation: load6 2s infinite ease, round 2s infinite ease;
   animation: load6 2s infinite ease, round 2s infinite ease;
 }
 @-webkit-keyframes load6 {
