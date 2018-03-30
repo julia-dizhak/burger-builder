@@ -7,7 +7,7 @@ export default function NavigationItems() {
     return (
         <ul className={classes.NavigationItems}>
             <NavigationItem link="/">Burger Builder</NavigationItem>
-            <NavigationItem link="/orders">Checkout</NavigationItem>
+            <NavigationItem link="/orders">Orders(or checkout)</NavigationItem>
         </ul>
     );
 };
