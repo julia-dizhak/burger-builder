@@ -61,6 +61,7 @@ export default class ContactData extends Component {
                 </Button>
             </form>   
         );
+        
         if (this.state.loading === true) {
             form = <Spinner />
         }

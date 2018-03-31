@@ -21,3 +21,8 @@ I suggest that you begin by typing:
 cd app
 yarn start
 ```
+
+## Styled components
+[To style css in the component](https://www.styled-components.com/)
+
+import { injectGlobal } from 'styled-components';
