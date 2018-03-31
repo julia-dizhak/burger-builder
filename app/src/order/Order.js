@@ -1,7 +1,15 @@
 import React from 'react';
-import classes from  './order.css';
+import styled from 'styled-components';
 
-export default function Order(props) {
+const IngredientStyle = styled.span`
+   text-transform: capitalize;
+   display: inline-block;
+   margin: 0 8px 0 0;
+   border: 1px solid #ccc;
+   padding: 5px;
+`;
+
+function _Order(props) {
     const { price, ingredients } = props;
     const ingredientsTransformed = [];
 
@@ -14,15 +22,15 @@ export default function Order(props) {
    
     const ingredientsOutput = ingredientsTransformed.map(ingredient => {
         return (
-            <span key={ingredient.name}>
-                {ingredient.name}
-                {ingredient.amount}
-            </span>
+            <IngredientStyle key={ingredient.name}>
+                { ingredient.name }&nbsp;
+                ({ ingredient.amount })
+            </IngredientStyle> 
         )
     });
 
     return (
-        <div className={classes.Order}>
+        <div className={props.className}>
             <p>
                 Ingredients: &nbsp;
                 { ingredientsOutput }
@@ -34,3 +42,14 @@ export default function Order(props) {
         </div>     
     );
 }
+
+const Order = styled(_Order)`
+    width: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 2px #ccc;
+    padding: 10px;
+    margin: 0 auto 15px;
+    box-sizing: border-box;
+`;
+
+export default Order;

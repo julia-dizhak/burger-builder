@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from './hoc/Layout/';
 import BurgerBuilder from './burger/Builder';
 import Checkout from './order/Checkout/';
-import Orders from './order/Orders/';
+import Orders from './order/Orders';
 
 export default class App extends Component {
     render() {
