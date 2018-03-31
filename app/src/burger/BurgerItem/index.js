@@ -14,7 +14,6 @@ function Burger(props) {
         .map(igKey => {
             // create an array with amount of given ingredient
             return [...Array(props.ingredients[igKey])].map((_, i) => {
-                // JSX
                 return <BurgerIngredient key={igKey + i} type={igKey} />
             });
         })

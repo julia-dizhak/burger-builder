@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Aux from './../hoc/AuxHOC';
+import AuxHOC from './../hoc/AuxHOC';
 import Burger from './BurgerItem/';
 import BuildControls from './BuildControls/';
 
@@ -10,7 +10,6 @@ import Spinner from './../widgets/Spinner/';
 
 import axios from './../utils/axios-orders';
 import withErrorHandler from './../hoc/withErrorHandler';
-
 
 const INGREDIENT_PRICES = {
     cheese: 0.9,
@@ -58,7 +57,6 @@ class BurgerBuilder extends Component {
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
-        console.log(sum);
         this.setState({purchasable: sum > 0});
     };
 
@@ -139,7 +137,7 @@ class BurgerBuilder extends Component {
 
         if (this.state.ingredients) {
             burger = (
-                <Aux>
+                <AuxHOC>
                     <Burger ingredients={this.state.ingredients} />
                     <BuildControls
                         ingredientAdd={this.addIngredientHandler}
@@ -147,15 +145,17 @@ class BurgerBuilder extends Component {
                         disabled={disabledInfo}
                         price={this.state.totalPrice}
                         ordered={this.purchaseHandler}
-                        purchasable={this.state.purchasable} />
-                </Aux>
+                        purchasable={this.state.purchasable} 
+                    />
+                </AuxHOC>
             );
 
             orderSummary = <OrderSummary
                         price={this.state.totalPrice}
                         ingredients={this.state.ingredients}
                         purchaseCancelled={this.purchaseCancelHandler}
-                        purchaseContinued={this.purchaseContinueHandler} />;
+                        purchaseContinued={this.purchaseContinueHandler} 
+                    />;
         }
 
         if (this.state.loading) {
@@ -163,7 +163,7 @@ class BurgerBuilder extends Component {
         }
 
         return (
-            <Aux>
+            <AuxHOC>
                 <Modal
                     show={this.state.purchasing}
                     modalClosed={this.purchaseCancelHandler}>
@@ -171,7 +171,7 @@ class BurgerBuilder extends Component {
                 </Modal>
                 {burger}
 
-            </Aux>
+            </AuxHOC>
         );
     }
 }

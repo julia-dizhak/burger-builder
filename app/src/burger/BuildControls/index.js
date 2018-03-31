@@ -3,15 +3,15 @@ import React from 'react';
 import classes from  './buildControls.css';
 import BuildControl from './../BuildControl/';
 
-export default function BuildControls(props) {
-    const controls = [
-        {label: 'Salad', type: 'salad'},
-        {label: 'Bacon', type: 'bacon'},
-        {label: 'Cheese', type: 'cheese'},
-        {label: 'Meat', type: 'meat'},
-        {label: 'Tomato', type: 'tomato'}
-    ];
+const controls = [
+    {label: 'Salad', type: 'salad'},
+    {label: 'Bacon', type: 'bacon'},
+    {label: 'Cheese', type: 'cheese'},
+    {label: 'Meat', type: 'meat'},
+    {label: 'Tomato', type: 'tomato'}
+];
 
+export default function BuildControls(props) {
     return (
         <div className={classes.BuildControls}>
             <p>Current price: <strong>{props.price.toFixed(2)}&nbsp;$</strong></p>
