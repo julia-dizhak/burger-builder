@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 
-import Modal from './../../widgets/Modal/';
-import Aux from './../AuxHOC/';
+import Modal from './../widgets/Modal/';
+import Aux from './AuxHOC';
 
-// class factory
-const withErrorHandler = (WrappedComponent, axios) => {
-
+export default function WithErrorHandler(WrappedComponent, axios) {
     return class extends Component {
         state = {
             error: null
@@ -41,5 +39,3 @@ const withErrorHandler = (WrappedComponent, axios) => {
         }
     }
 };
-
-export default withErrorHandler;

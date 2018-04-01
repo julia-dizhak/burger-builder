@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AuxHOC from './../../hoc/AuxHOC/';
+import AuxHOC from './../../hoc/AuxHOC';
 import Button from './../../widgets/Button/';
 
 const orderSummary = (props) => {

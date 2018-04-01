@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Order from './Order';
 import axios from './../utils/axios-orders';
-import withErrorHandler from './../hoc/withErrorHandler';
+import WithErrorHandler from './../hoc/WithErrorHandler';
 
 class _Orders extends Component {
     state = {
@@ -53,4 +53,4 @@ const Orders = styled(_Orders)`
     box-sizing: border-box;
 `;
 
-export default withErrorHandler(Orders, axios);
+export default WithErrorHandler(Orders, axios);

@@ -42,3 +42,8 @@ actions -
 reducer -
 
 store -
+
+mapStateProp
+
+mapDispatchToProps
+connect ...
