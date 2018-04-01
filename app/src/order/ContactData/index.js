@@ -3,6 +3,8 @@ import Button from './../../widgets/Button';
 
 import instance from './../../utils/axios-orders';
 import Spinner from './../../widgets/Spinner/';
+import Input from './../../forms/Input';
+import Textarea from './../../forms/Textarea';
 
 import classes from './contact-data.css';
 
@@ -50,10 +52,27 @@ export default class ContactData extends Component {
     render() {
         let form = (
             <form>
-                <input type="text" name="name" className={classes.customInput} placeholder="enter your name" />
-                <input type="email" name="email" className={classes.customInput} placeholder="enter your mail" />
-                <input type="text" name="street" className={classes.customInput} placeholder="enter your street" />
-                <input type="number" name="postal" className={classes.customInput} placeholder="enter your postal code" />
+                <Input 
+                    type="text" 
+                    name="name" 
+                    label="Name"
+                    placeholder="please enter your name" />
+
+                <Input 
+                    type="email" 
+                    name="email"
+                    label="Email"
+                    placeholder="please enter your mail" />
+                <Input type="text" name="street" placeholder="enter your street" />
+                <Input type="number" name="post" placeholder="enter your post code" />
+                
+                <Textarea 
+                    name="comments"
+                    cols={20}
+                    rows={3}
+                    label="Comments" 
+                    placeholder="please leave your comments" />
+        
                 <Button 
                     btnType="success"
                     clicked={this.handleOrder}>
