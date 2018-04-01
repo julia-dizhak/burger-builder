@@ -8,7 +8,8 @@ const initialState = {
         meat: 0,
         tomato: 0
     },
-    totalPrice: 0
+    totalPrice: 0,
+    //purchasable:
 };
 
 const INGREDIENT_PRICES = {

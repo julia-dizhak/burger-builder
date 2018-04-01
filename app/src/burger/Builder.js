@@ -15,7 +15,6 @@ import WithErrorHandler from './../hoc/WithErrorHandler';
 
 class BurgerBuilder extends Component {
     state = {
-        purchasable: false,
         purchasing: false,
         loading: false,
         error: false
@@ -33,27 +32,25 @@ class BurgerBuilder extends Component {
     }
 
     updatePurchaseState(ingredients) {
-        // total amount of ingredients
         const sum = Object.keys(ingredients).map(
             igKey => {
-                return ingredients[igKey]; // array of values
+                return ingredients[igKey]; 
             })
-            // sum of all ingredients
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
-        this.setState({purchasable: sum > 0});
+        return sum > 0;
     };
     
     purchaseHandler = () => {
-         this.setState({purchasing: true});
+        this.setState({purchasing: true});
      };
 
-     purchaseCancelHandler = () => {
-         this.setState({purchasing: false})
-     };
+    purchaseCancelHandler = () => {
+        this.setState({purchasing: false})
+    };
 
-     purchaseContinueHandler = () => {
+    purchaseContinueHandler = () => {
        // switch page on push
         const queryParams = [];
         for (let i in this.state.ingredients) {
@@ -65,7 +62,7 @@ class BurgerBuilder extends Component {
             pathname: '/checkout',
             search: '?' + queryString
         });    
-     };
+    };
 
     render() {
         const disabledInfo = {
@@ -89,7 +86,7 @@ class BurgerBuilder extends Component {
                         disabled={disabledInfo}
                         price={this.props.price}
                         ordered={this.purchaseHandler}
-                        purchasable={this.state.purchasable} 
+                        purchasable={this.updatePurchaseState(this.props.ingredients)} 
                     />
                 </AuxHOC>
             );
