@@ -28,8 +28,8 @@ class BurgerBuilder extends Component {
         //     tomato: 0,
         //     meat: 0
         // },
-       // ingredients: null,
-        //totalPrice: 4,
+        ingredients: null,
+        totalPrice: 4,
         purchasable: false,
         purchasing: false,
         loading: false,
@@ -38,13 +38,13 @@ class BurgerBuilder extends Component {
 
     // called immediately after the node is inserted into the DOM
     componentDidMount() {
-        axios.get('https://react-burger-builder-dizhak.firebaseio.com/ingredients.json')
-            .then(response => {
-                this.setState({ingredients: response.data})
-            })
-            .catch(error => {
-                this.setState({error: true})
-            })
+        // axios.get('https://react-burger-builder-dizhak.firebaseio.com/ingredients.json')
+        //     .then(response => {
+        //         this.setState({ingredients: response.data})
+        //     })
+        //     .catch(error => {
+        //         this.setState({error: true})
+        //     })
     }
 
     updatePurchaseState(ingredients) {
