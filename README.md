@@ -26,3 +26,19 @@ yarn start
 [To style css in the component](https://www.styled-components.com/)
 
 import { injectGlobal } from 'styled-components';
+
+## Redux setup
+```yarn add redux```
+
+```yarn add react-redux```
+
+```
+import { Provider } from 'react-redux';
+import { createStore} from 'redux';
+```
+
+actions -
+
+reducer -
+
+store -
