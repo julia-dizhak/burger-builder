@@ -22,10 +22,9 @@ cd app
 yarn start
 ```
 
-## Styled components
-[To style css in the component](https://www.styled-components.com/)
+## Component Lifecycle
+componentWillMount - executed before the node is inserted into the DOM;
 
-import { injectGlobal } from 'styled-components';
 
 ## Redux setup
 ```yarn add redux```
@@ -47,3 +46,8 @@ mapStateProp
 
 mapDispatchToProps
 connect ...
+
+## Styled components
+[To style css in the component](https://www.styled-components.com/)
+
+import { injectGlobal } from 'styled-components';

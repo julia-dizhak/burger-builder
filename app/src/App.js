@@ -4,7 +4,7 @@ import { injectGlobal } from 'styled-components';
 
 import Layout from './hoc/Layout/';
 import BurgerBuilder from './burger/Builder';
-import Checkout from './order/Checkout/';
+import Checkout from './order/Checkout';
 import Orders from './order/Orders';
 
 injectGlobal`

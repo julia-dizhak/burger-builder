@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Button from './../../widgets/Button';
+import { connect } from 'react-redux';
 
+import Button from './../../widgets/Button';
 import instance from './../../utils/axios-orders';
 import Spinner from './../../widgets/Spinner/';
 import Input from './../../forms/Input';
@@ -8,7 +9,7 @@ import Textarea from './../../forms/Textarea';
 
 import classes from './contact-data.css';
 
-export default class ContactData extends Component {
+class ContactData extends Component {
     state = {
         name : '',
         email: '',
@@ -88,8 +89,17 @@ export default class ContactData extends Component {
         return (
             <div className={classes.contactData}>
                 <h2>Enter your contact data</h2>
-                 {form}
+                { form }
             </div>
         )
     }
 }
+
+const mapStateProps = state => {
+    return {
+        ingredients: state.ingredients,
+        price: state.totalPrice
+    }
+}
+
+export default connect(mapStateProps, null)(ContactData);
