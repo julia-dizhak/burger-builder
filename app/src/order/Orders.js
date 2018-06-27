@@ -8,7 +8,7 @@ class _Orders extends Component {
     state = {
         orders: [],
         loading: true
-    }
+    };
 
     componentDidMount() {
         axios.get('/orders.json')
@@ -30,19 +30,19 @@ class _Orders extends Component {
                 this.setState({loading: false})
             })
     }
-    
+
     render() {
         return (
             <div className={this.props.className}>
                 {
                     this.state.orders.map(order1 => (
-                        <Order 
+                        <Order
                             key={order1.id}
                             ingredients={order1.ingredients}
-                            price={order1.price} 
+                            price={order1.price}
                         />
                     ))
-                } 
+                }
             </div>
         );
     }

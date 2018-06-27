@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as burgerActions from './../store/actions/burger';
 import { connect } from 'react-redux';
+import axios from './../utils/axios-orders';
 
 import AuxHOC from './../hoc/AuxHOC';
 import Burger from './BurgerItem/';
@@ -10,7 +11,6 @@ import Modal from './../widgets/Modal/';
 import OrderSummary from './../order/OrderSummary/';
 import Spinner from './../widgets/Spinner/';
 
-import axios from './../utils/axios-orders';
 import WithErrorHandler from './../hoc/WithErrorHandler';
 
 class BurgerBuilder extends Component {
@@ -22,26 +22,20 @@ class BurgerBuilder extends Component {
 
     // called immediately after the node is inserted into the DOM
     componentDidMount() {
-        // axios.get('https://react-burger-builder-dizhak.firebaseio.com/ingredients.json')
-        //     .then(response => {
-        //         this.setState({ingredients: response.data})
-        //     })
-        //     .catch(error => {
-        //         this.setState({error: true})
-        //     })
+
     }
 
     updatePurchaseState(ingredients) {
         const sum = Object.keys(ingredients).map(
             igKey => {
-                return ingredients[igKey]; 
+                return ingredients[igKey];
             })
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
         return sum > 0;
     };
-    
+
     purchaseHandler = () => {
         this.setState({purchasing: true});
      };
@@ -51,7 +45,7 @@ class BurgerBuilder extends Component {
     };
 
     handlePurchaseContinue = () => {
-        this.props.history.push('/checkout');    
+        this.props.history.push('/checkout');
     };
 
     render() {
@@ -76,7 +70,7 @@ class BurgerBuilder extends Component {
                         disabled={disabledInfo}
                         price={this.props.price}
                         ordered={this.purchaseHandler}
-                        purchasable={this.updatePurchaseState(this.props.ingredients)} 
+                        purchasable={this.updatePurchaseState(this.props.ingredients)}
                     />
                 </AuxHOC>
             );
@@ -85,7 +79,7 @@ class BurgerBuilder extends Component {
                         price={this.props.price}
                         ingredients={this.props.ingredients}
                         purchaseCancelled={this.purchaseCancelHandler}
-                        purchaseContinued={this.handlePurchaseContinue} 
+                        purchaseContinued={this.handlePurchaseContinue}
                     />;
         }
 
@@ -111,13 +105,13 @@ const mapStateProps = state => {
         ingredients: state.ingredients,
         price: state.totalPrice
     }
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return {
         handleIngredientAdd: (ingredientName) => dispatch(burgerActions.addIngredient(ingredientName)),
         handleIngredientRemove: (ingredientName) => dispatch(burgerActions.removeIngredient(ingredientName))
     }
-}
+};
 
 export default connect(mapStateProps, mapDispatchToProps)(WithErrorHandler(BurgerBuilder, axios));
