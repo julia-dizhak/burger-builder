@@ -1,5 +1,7 @@
-# Burger builder by React library
+# Burger builder by React
 React burger builder app
+
+[demo](https://julia-dizhak.github.io/burger-builder/app/demo/)
 
 ## Setting up the project
 
